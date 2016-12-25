@@ -11801,7 +11801,7 @@ Given a student's data, we need to predict an outcome from a finite discreet set
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11853,7 +11853,7 @@ Given a student's data, we need to predict an outcome from a finite discreet set
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate number of students</span>
@@ -11916,7 +11916,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -11998,7 +11998,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -12069,7 +12069,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import any additional functionality you may need here</span>
@@ -12151,9 +12151,14 @@ Testing set has 95 samples.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<h3 id="Gaussian-Naive-Bayes-(GaussianNB):--(Not-chosen-for-this-problem)">Gaussian Naive Bayes (GaussianNB):  <font color="red">(Not chosen for this problem)</font><a class="anchor-link" href="#Gaussian-Naive-Bayes-(GaussianNB):--(Not-chosen-for-this-problem)">&#182;</a></h3><p>GaussianNB assumes conditional independence between features given class label. This may not be true in our case. For example weather student has access to internet might depend a lot on jobs of studen's parent.</p>
-<ul>
-<li><strong>Real world application:</strong> </li>
+<h3 id="Gaussian-Naive-Bayes-(GaussianNB):--(Not-chosen-for-this-problem)">Gaussian Naive Bayes (GaussianNB):  <font color="red">(Not chosen for this problem)</font><a class="anchor-link" href="#Gaussian-Naive-Bayes-(GaussianNB):--(Not-chosen-for-this-problem)">&#182;</a></h3><ul>
+<li><strong>Real world application:</strong> <ul>
+<li>Spam detection in Email</li>
+<li>News article classification</li>
+<li>Sentiment analysis of text</li>
+<li>Facial recognition </li>
+</ul>
+</li>
 <li><strong>Strengths:</strong> <ul>
 <li>Scalable</li>
 </ul>
@@ -12163,7 +12168,10 @@ Testing set has 95 samples.
 <li>Can’t learn interactions between features.</li>
 </ul>
 </li>
-<li><strong>Why not a good candidate for this problem:</strong> </li>
+<li><strong>Why not a good candidate for this problem:</strong> <ul>
+<li>GaussianNB assumes conditional independence between features given class label. This may not be true in our case. For example weather student has access to internet might depend a lot on jobs of studen's parent. </li>
+</ul>
+</li>
 </ul>
 <h3 id="Decision-Tree:--(Chosen-for-this-problem)">Decision Tree:  <font color="green">(Chosen for this problem)</font><a class="anchor-link" href="#Decision-Tree:--(Chosen-for-this-problem)">&#182;</a></h3><ul>
 <li><p><strong>Real world application:</strong></p>
@@ -12188,26 +12196,38 @@ Testing set has 95 samples.
 <li>Can overfit to training data easily. </li>
 </ul>
 </li>
-<li><strong>Why a good candidate for this problem:</strong> </li>
-</ul>
-<h3 id="Bagging-Classifier:-(Not-chosen-for-this-problem)">Bagging Classifier: <font color="red">(Not chosen for this problem)</font><a class="anchor-link" href="#Bagging-Classifier:-(Not-chosen-for-this-problem)">&#182;</a></h3><ul>
-<li><strong>Real world application:</strong> </li>
-<li><strong>Strengths:</strong> </li>
-<li><strong>Weaknesses:</strong>  <ul>
-<li>Time consuming; Slow learning speed.</li>
-<li>Hard to understand</li>
+<li><strong>Why a good candidate for this problem:</strong> <ul>
+<li>DecisionTree is easy visualize and explain. </li>
 </ul>
 </li>
-<li><strong>Why not a good candidate for this problem:</strong> </li>
+</ul>
+<h3 id="Bagging-Classifier:-(Not-chosen-for-this-problem)">Bagging Classifier: <font color="red">(Not chosen for this problem)</font><a class="anchor-link" href="#Bagging-Classifier:-(Not-chosen-for-this-problem)">&#182;</a></h3><ul>
+<li><strong>Real world application:</strong><ul>
+<li>This a meta-algorithm(uses other algorithms as building blocks). It Can be used in all the problems where its constituent algorithms are applicable. </li>
+</ul>
+</li>
+<li><strong>Strengths:</strong> <ul>
+<li>Reduced risk of overfitting </li>
+</ul>
+</li>
+<li><strong>Weaknesses:</strong>  <ul>
+<li>Time consuming; Slow learning speed.</li>
+<li>Hard to visualize and understand</li>
+</ul>
+</li>
+<li><strong>Why not a good candidate for this problem:</strong> 
+Mainly because its time consuming. </li>
 </ul>
 <h3 id="RandomForestClassifier:-(Not-chosen-for-this-problem)">RandomForestClassifier: <font color="red">(Not chosen for this problem)</font><a class="anchor-link" href="#RandomForestClassifier:-(Not-chosen-for-this-problem)">&#182;</a></h3><ul>
 <li><strong>Real world application:</strong> </li>
-<li><strong>Strengths:</strong> </li>
-<li><strong>Weaknesses:</strong>  <ul>
+<li><strong>Strengths:</strong> <ul>
 <li>Can parallelize the learning process as the trees are train independently</li>
 </ul>
 </li>
-<li><strong>Why not a good candidate for this problem:</strong> </li>
+<li><p><strong>Weaknesses:</strong></p>
+</li>
+<li><p><strong>Why not a good candidate for this problem:</strong></p>
+</li>
 </ul>
 <h3 id="Ada-Boost:-(Not-chosen-for-this-problem)">Ada Boost: <font color="red">(Not chosen for this problem)</font><a class="anchor-link" href="#Ada-Boost:-(Not-chosen-for-this-problem)">&#182;</a></h3><ul>
 <li><strong>Real world application:</strong> </li>
@@ -12243,7 +12263,10 @@ Testing set has 95 samples.
 <li>Sensitive to noise</li>
 </ul>
 </li>
-<li><strong>Why not a good candidate for this problem:</strong> </li>
+<li><strong>Why a good candidate for this problem:</strong> <ul>
+<li>This algorithm learns fast. And, the training data is small enough to not hit the memory problem.  </li>
+</ul>
+</li>
 </ul>
 <h3 id="Stochastic-Gradient-Descent-(SGDC):-(Not-chosen-for-this-problem)">Stochastic Gradient Descent (SGDC): <font color="red">(Not chosen for this problem)</font><a class="anchor-link" href="#Stochastic-Gradient-Descent-(SGDC):-(Not-chosen-for-this-problem)">&#182;</a></h3><ul>
 <li><strong>Real world application:</strong> </li>
@@ -12261,7 +12284,8 @@ Testing set has 95 samples.
 <li>Sensitive to feature scaling </li>
 </ul>
 </li>
-<li><strong>Why not a good candidate for this problem:</strong> </li>
+<li><strong>Why not a good candidate for this problem:</strong> 
+Our trainig data is too small(300) to be using Stochastic Gradient Descent.</li>
 </ul>
 <h3 id="Support-Vector-Machines-(SVM):-(Chosen-for-this-problem)">Support Vector Machines (SVM): <font color="green">(Chosen for this problem)</font><a class="anchor-link" href="#Support-Vector-Machines-(SVM):-(Chosen-for-this-problem)">&#182;</a></h3><ul>
 <li><strong>Real world application:</strong> <ul>
@@ -12287,6 +12311,10 @@ Testing set has 95 samples.
 </ul>
 </li>
 <li><p><strong>Why a good candidate for this problem:</strong></p>
+<ul>
+<li>Very powerful. </li>
+<li>This algoithm can also find the best separating line. </li>
+</ul>
 </li>
 </ul>
 <h3 id="Logistic-Regression:-(Not-chosen-for-this-problem)">Logistic Regression: <font color="red">(Not chosen for this problem)</font><a class="anchor-link" href="#Logistic-Regression:-(Not-chosen-for-this-problem)">&#182;</a></h3><ul>
@@ -12322,7 +12350,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12371,7 +12399,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier2</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12450,7 +12478,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -12528,7 +12556,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;classifier&#39;</span><span class="p">,</span> <span class="s1">&#39;tuned&#39;</span><span class="p">,</span> <span class="s1">&#39;training_size&#39;</span><span class="p">,</span> <span class="s1">&#39;training_time&#39;</span><span class="p">,</span> <span class="s1">&#39;test_time&#39;</span><span class="p">,</span> <span class="s1">&#39;train_f1&#39;</span><span class="p">,</span> <span class="s1">&#39;test_f1&#39;</span><span class="p">]</span>
@@ -12543,7 +12571,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">exec_train_predict</span><span class="p">(</span><span class="n">default_classifiers</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">tuned</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -12565,7 +12593,7 @@ Testing set has 95 samples.
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12588,8 +12616,8 @@ Testing set has 95 samples.
       <td>GaussianNB</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.001870</td>
-      <td>0.000584</td>
+      <td>0.001961</td>
+      <td>0.000435</td>
       <td>0.846715</td>
       <td>0.802920</td>
     </tr>
@@ -12598,8 +12626,8 @@ Testing set has 95 samples.
       <td>GaussianNB</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.001112</td>
-      <td>0.000375</td>
+      <td>0.001026</td>
+      <td>0.000492</td>
       <td>0.840580</td>
       <td>0.724409</td>
     </tr>
@@ -12608,8 +12636,8 @@ Testing set has 95 samples.
       <td>GaussianNB</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.001375</td>
-      <td>0.000393</td>
+      <td>0.001394</td>
+      <td>0.000359</td>
       <td>0.803783</td>
       <td>0.763359</td>
     </tr>
@@ -12618,8 +12646,8 @@ Testing set has 95 samples.
       <td>DecisionTreeClassifier</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.000997</td>
-      <td>0.000236</td>
+      <td>0.000972</td>
+      <td>0.000202</td>
       <td>1.000000</td>
       <td>0.655172</td>
     </tr>
@@ -12628,8 +12656,8 @@ Testing set has 95 samples.
       <td>DecisionTreeClassifier</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.001487</td>
-      <td>0.000218</td>
+      <td>0.001211</td>
+      <td>0.000189</td>
       <td>1.000000</td>
       <td>0.750000</td>
     </tr>
@@ -12638,8 +12666,8 @@ Testing set has 95 samples.
       <td>DecisionTreeClassifier</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.002075</td>
-      <td>0.000219</td>
+      <td>0.002670</td>
+      <td>0.000265</td>
       <td>1.000000</td>
       <td>0.661290</td>
     </tr>
@@ -12648,8 +12676,8 @@ Testing set has 95 samples.
       <td>AdaBoostClassifier</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.132214</td>
-      <td>0.006581</td>
+      <td>0.110535</td>
+      <td>0.005426</td>
       <td>0.948148</td>
       <td>0.766917</td>
     </tr>
@@ -12658,8 +12686,8 @@ Testing set has 95 samples.
       <td>AdaBoostClassifier</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.135724</td>
-      <td>0.006490</td>
+      <td>0.116432</td>
+      <td>0.005326</td>
       <td>0.892734</td>
       <td>0.828125</td>
     </tr>
@@ -12668,8 +12696,8 @@ Testing set has 95 samples.
       <td>AdaBoostClassifier</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.141307</td>
-      <td>0.007032</td>
+      <td>0.121636</td>
+      <td>0.005334</td>
       <td>0.863741</td>
       <td>0.781955</td>
     </tr>
@@ -12678,8 +12706,8 @@ Testing set has 95 samples.
       <td>RandomForestClassifier</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.029640</td>
-      <td>0.001147</td>
+      <td>0.026547</td>
+      <td>0.001029</td>
       <td>0.984375</td>
       <td>0.715328</td>
     </tr>
@@ -12688,8 +12716,8 @@ Testing set has 95 samples.
       <td>RandomForestClassifier</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.031459</td>
-      <td>0.001284</td>
+      <td>0.025768</td>
+      <td>0.001035</td>
       <td>0.996390</td>
       <td>0.785714</td>
     </tr>
@@ -12698,8 +12726,8 @@ Testing set has 95 samples.
       <td>RandomForestClassifier</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.032422</td>
-      <td>0.001104</td>
+      <td>0.027067</td>
+      <td>0.001031</td>
       <td>0.995122</td>
       <td>0.809160</td>
     </tr>
@@ -12708,8 +12736,8 @@ Testing set has 95 samples.
       <td>GradientBoostingClassifier</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.067303</td>
-      <td>0.000437</td>
+      <td>0.057076</td>
+      <td>0.000394</td>
       <td>1.000000</td>
       <td>0.751880</td>
     </tr>
@@ -12718,8 +12746,8 @@ Testing set has 95 samples.
       <td>GradientBoostingClassifier</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.083950</td>
-      <td>0.000424</td>
+      <td>0.072169</td>
+      <td>0.000404</td>
       <td>0.996390</td>
       <td>0.759124</td>
     </tr>
@@ -12728,8 +12756,8 @@ Testing set has 95 samples.
       <td>GradientBoostingClassifier</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.101790</td>
-      <td>0.000544</td>
+      <td>0.086293</td>
+      <td>0.000416</td>
       <td>0.973872</td>
       <td>0.779412</td>
     </tr>
@@ -12738,8 +12766,8 @@ Testing set has 95 samples.
       <td>KNeighborsClassifier</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.000870</td>
-      <td>0.001175</td>
+      <td>0.027753</td>
+      <td>0.001526</td>
       <td>0.805970</td>
       <td>0.724638</td>
     </tr>
@@ -12748,8 +12776,8 @@ Testing set has 95 samples.
       <td>KNeighborsClassifier</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.000730</td>
-      <td>0.001942</td>
+      <td>0.000596</td>
+      <td>0.001533</td>
       <td>0.880000</td>
       <td>0.769231</td>
     </tr>
@@ -12758,8 +12786,8 @@ Testing set has 95 samples.
       <td>KNeighborsClassifier</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.000883</td>
-      <td>0.002378</td>
+      <td>0.000762</td>
+      <td>0.002125</td>
       <td>0.880899</td>
       <td>0.780142</td>
     </tr>
@@ -12768,8 +12796,8 @@ Testing set has 95 samples.
       <td>SVC</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.001395</td>
-      <td>0.000724</td>
+      <td>0.001294</td>
+      <td>0.000739</td>
       <td>0.877698</td>
       <td>0.774648</td>
     </tr>
@@ -12778,8 +12806,8 @@ Testing set has 95 samples.
       <td>SVC</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.003458</td>
-      <td>0.001285</td>
+      <td>0.002796</td>
+      <td>0.001014</td>
       <td>0.867925</td>
       <td>0.781457</td>
     </tr>
@@ -12788,8 +12816,8 @@ Testing set has 95 samples.
       <td>SVC</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.006580</td>
-      <td>0.001624</td>
+      <td>0.005861</td>
+      <td>0.001432</td>
       <td>0.876068</td>
       <td>0.783784</td>
     </tr>
@@ -12798,8 +12826,8 @@ Testing set has 95 samples.
       <td>SGDClassifier</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.000846</td>
-      <td>0.000443</td>
+      <td>0.000692</td>
+      <td>0.000338</td>
       <td>0.000000</td>
       <td>0.064516</td>
     </tr>
@@ -12808,8 +12836,8 @@ Testing set has 95 samples.
       <td>SGDClassifier</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.000863</td>
-      <td>0.000203</td>
+      <td>0.000688</td>
+      <td>0.000174</td>
       <td>0.768061</td>
       <td>0.655172</td>
     </tr>
@@ -12818,8 +12846,8 @@ Testing set has 95 samples.
       <td>SGDClassifier</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.000983</td>
-      <td>0.000200</td>
+      <td>0.000837</td>
+      <td>0.000184</td>
       <td>0.826176</td>
       <td>0.791946</td>
     </tr>
@@ -12828,8 +12856,8 @@ Testing set has 95 samples.
       <td>LogisticRegression</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.001301</td>
-      <td>0.000194</td>
+      <td>0.001125</td>
+      <td>0.000172</td>
       <td>0.859259</td>
       <td>0.764706</td>
     </tr>
@@ -12838,8 +12866,8 @@ Testing set has 95 samples.
       <td>LogisticRegression</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.001912</td>
-      <td>0.000191</td>
+      <td>0.001667</td>
+      <td>0.000172</td>
       <td>0.856187</td>
       <td>0.791367</td>
     </tr>
@@ -12848,8 +12876,8 @@ Testing set has 95 samples.
       <td>LogisticRegression</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.002942</td>
-      <td>0.000245</td>
+      <td>0.002391</td>
+      <td>0.000174</td>
       <td>0.846847</td>
       <td>0.805970</td>
     </tr>
@@ -12858,8 +12886,8 @@ Testing set has 95 samples.
       <td>BaggingClassifier</td>
       <td>False</td>
       <td>100.0</td>
-      <td>0.026495</td>
-      <td>0.001377</td>
+      <td>0.022743</td>
+      <td>0.001219</td>
       <td>0.984375</td>
       <td>0.740157</td>
     </tr>
@@ -12868,8 +12896,8 @@ Testing set has 95 samples.
       <td>BaggingClassifier</td>
       <td>False</td>
       <td>200.0</td>
-      <td>0.029725</td>
-      <td>0.001579</td>
+      <td>0.025399</td>
+      <td>0.001293</td>
       <td>0.996390</td>
       <td>0.744186</td>
     </tr>
@@ -12878,8 +12906,8 @@ Testing set has 95 samples.
       <td>BaggingClassifier</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.033287</td>
-      <td>0.001391</td>
+      <td>0.028184</td>
+      <td>0.001271</td>
       <td>0.987715</td>
       <td>0.709677</td>
     </tr>
@@ -13336,7 +13364,7 @@ DecisionTree is a simple flow chart (bunch of if-this-go-lelft/if-that-go-right)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span>
@@ -13372,7 +13400,7 @@ DecisionTree is a simple flow chart (bunch of if-this-go-lelft/if-that-go-right)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -13457,466 +13485,11 @@ DecisionTree is a simple flow chart (bunch of if-this-go-lelft/if-that-go-right)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">data_tune</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">]])</span>
 <span class="n">exec_train_predict</span><span class="p">(</span><span class="n">tuned_classifiers</span><span class="p">,</span> <span class="n">data_tune</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">tuned</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>classifier</th>
-      <th>tuned</th>
-      <th>training_size</th>
-      <th>training_time</th>
-      <th>test_time</th>
-      <th>train_f1</th>
-      <th>test_f1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GaussianNB</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.001870</td>
-      <td>0.000584</td>
-      <td>0.846715</td>
-      <td>0.802920</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GaussianNB</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.001112</td>
-      <td>0.000375</td>
-      <td>0.840580</td>
-      <td>0.724409</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>GaussianNB</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.001375</td>
-      <td>0.000393</td>
-      <td>0.803783</td>
-      <td>0.763359</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>DecisionTreeClassifier</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.000997</td>
-      <td>0.000236</td>
-      <td>1.000000</td>
-      <td>0.655172</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>DecisionTreeClassifier</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.001487</td>
-      <td>0.000218</td>
-      <td>1.000000</td>
-      <td>0.750000</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>DecisionTreeClassifier</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.002075</td>
-      <td>0.000219</td>
-      <td>1.000000</td>
-      <td>0.661290</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>AdaBoostClassifier</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.132214</td>
-      <td>0.006581</td>
-      <td>0.948148</td>
-      <td>0.766917</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>AdaBoostClassifier</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.135724</td>
-      <td>0.006490</td>
-      <td>0.892734</td>
-      <td>0.828125</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>AdaBoostClassifier</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.141307</td>
-      <td>0.007032</td>
-      <td>0.863741</td>
-      <td>0.781955</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>RandomForestClassifier</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.029640</td>
-      <td>0.001147</td>
-      <td>0.984375</td>
-      <td>0.715328</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>RandomForestClassifier</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.031459</td>
-      <td>0.001284</td>
-      <td>0.996390</td>
-      <td>0.785714</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>RandomForestClassifier</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.032422</td>
-      <td>0.001104</td>
-      <td>0.995122</td>
-      <td>0.809160</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>GradientBoostingClassifier</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.067303</td>
-      <td>0.000437</td>
-      <td>1.000000</td>
-      <td>0.751880</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>GradientBoostingClassifier</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.083950</td>
-      <td>0.000424</td>
-      <td>0.996390</td>
-      <td>0.759124</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>GradientBoostingClassifier</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.101790</td>
-      <td>0.000544</td>
-      <td>0.973872</td>
-      <td>0.779412</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>KNeighborsClassifier</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.000870</td>
-      <td>0.001175</td>
-      <td>0.805970</td>
-      <td>0.724638</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>KNeighborsClassifier</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.000730</td>
-      <td>0.001942</td>
-      <td>0.880000</td>
-      <td>0.769231</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>KNeighborsClassifier</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.000883</td>
-      <td>0.002378</td>
-      <td>0.880899</td>
-      <td>0.780142</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>SVC</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.001395</td>
-      <td>0.000724</td>
-      <td>0.877698</td>
-      <td>0.774648</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>SVC</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.003458</td>
-      <td>0.001285</td>
-      <td>0.867925</td>
-      <td>0.781457</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>SVC</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.006580</td>
-      <td>0.001624</td>
-      <td>0.876068</td>
-      <td>0.783784</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>SGDClassifier</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.000846</td>
-      <td>0.000443</td>
-      <td>0.000000</td>
-      <td>0.064516</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>SGDClassifier</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.000863</td>
-      <td>0.000203</td>
-      <td>0.768061</td>
-      <td>0.655172</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>SGDClassifier</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.000983</td>
-      <td>0.000200</td>
-      <td>0.826176</td>
-      <td>0.791946</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>LogisticRegression</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.001301</td>
-      <td>0.000194</td>
-      <td>0.859259</td>
-      <td>0.764706</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>LogisticRegression</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.001912</td>
-      <td>0.000191</td>
-      <td>0.856187</td>
-      <td>0.791367</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>LogisticRegression</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.002942</td>
-      <td>0.000245</td>
-      <td>0.846847</td>
-      <td>0.805970</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>BaggingClassifier</td>
-      <td>False</td>
-      <td>100.0</td>
-      <td>0.026495</td>
-      <td>0.001377</td>
-      <td>0.984375</td>
-      <td>0.740157</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>BaggingClassifier</td>
-      <td>False</td>
-      <td>200.0</td>
-      <td>0.029725</td>
-      <td>0.001579</td>
-      <td>0.996390</td>
-      <td>0.744186</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>BaggingClassifier</td>
-      <td>False</td>
-      <td>300.0</td>
-      <td>0.033287</td>
-      <td>0.001391</td>
-      <td>0.987715</td>
-      <td>0.709677</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>GaussianNB</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.001885</td>
-      <td>0.000402</td>
-      <td>0.803783</td>
-      <td>0.763359</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>DecisionTreeClassifier</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.000952</td>
-      <td>0.000207</td>
-      <td>0.838574</td>
-      <td>0.786667</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>AdaBoostClassifier</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.006727</td>
-      <td>0.000445</td>
-      <td>0.829876</td>
-      <td>0.800000</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>RandomForestClassifier</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.024303</td>
-      <td>0.001024</td>
-      <td>0.890351</td>
-      <td>0.774648</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>GradientBoostingClassifier</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.032835</td>
-      <td>0.000311</td>
-      <td>0.851695</td>
-      <td>0.797203</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>KNeighborsClassifier</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.001109</td>
-      <td>0.002439</td>
-      <td>1.000000</td>
-      <td>0.791946</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>SVC</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.007585</td>
-      <td>0.001278</td>
-      <td>0.832298</td>
-      <td>0.794521</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>SGDClassifier</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.009430</td>
-      <td>0.000177</td>
-      <td>0.836910</td>
-      <td>0.774648</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>LogisticRegression</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.001432</td>
-      <td>0.000177</td>
-      <td>0.825911</td>
-      <td>0.781457</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>BaggingClassifier</td>
-      <td>True</td>
-      <td>300.0</td>
-      <td>0.044329</td>
-      <td>0.002117</td>
-      <td>0.841004</td>
-      <td>0.805556</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-5---Final-F1-Score">Question 5 - Final F<sub>1</sub> Score<a class="anchor-link" href="#Question-5---Final-F1-Score">&#182;</a></h3><p><em>What is the final model's F<sub>1</sub> score for training and testing? How does that score compare to the untuned model?</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">classifier</span><span class="o">==</span><span class="s1">&#39;BaggingClassifier&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">training_size</span><span class="o">==</span><span class="mi">300</span><span class="p">)]</span>
 </pre></div>
 
 </div>
@@ -13946,22 +13519,402 @@ DecisionTree is a simple flow chart (bunch of if-this-go-lelft/if-that-go-right)
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>GaussianNB</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.001961</td>
+      <td>0.000435</td>
+      <td>0.846715</td>
+      <td>0.802920</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>GaussianNB</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.001026</td>
+      <td>0.000492</td>
+      <td>0.840580</td>
+      <td>0.724409</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>GaussianNB</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.001394</td>
+      <td>0.000359</td>
+      <td>0.803783</td>
+      <td>0.763359</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>DecisionTreeClassifier</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.000972</td>
+      <td>0.000202</td>
+      <td>1.000000</td>
+      <td>0.655172</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>DecisionTreeClassifier</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.001211</td>
+      <td>0.000189</td>
+      <td>1.000000</td>
+      <td>0.750000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>DecisionTreeClassifier</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.002670</td>
+      <td>0.000265</td>
+      <td>1.000000</td>
+      <td>0.661290</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AdaBoostClassifier</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.110535</td>
+      <td>0.005426</td>
+      <td>0.948148</td>
+      <td>0.766917</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>AdaBoostClassifier</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.116432</td>
+      <td>0.005326</td>
+      <td>0.892734</td>
+      <td>0.828125</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>AdaBoostClassifier</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.121636</td>
+      <td>0.005334</td>
+      <td>0.863741</td>
+      <td>0.781955</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>RandomForestClassifier</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.026547</td>
+      <td>0.001029</td>
+      <td>0.984375</td>
+      <td>0.715328</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>RandomForestClassifier</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.025768</td>
+      <td>0.001035</td>
+      <td>0.996390</td>
+      <td>0.785714</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>RandomForestClassifier</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.027067</td>
+      <td>0.001031</td>
+      <td>0.995122</td>
+      <td>0.809160</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>GradientBoostingClassifier</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.057076</td>
+      <td>0.000394</td>
+      <td>1.000000</td>
+      <td>0.751880</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>GradientBoostingClassifier</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.072169</td>
+      <td>0.000404</td>
+      <td>0.996390</td>
+      <td>0.759124</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>GradientBoostingClassifier</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.086293</td>
+      <td>0.000416</td>
+      <td>0.973872</td>
+      <td>0.779412</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>KNeighborsClassifier</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.027753</td>
+      <td>0.001526</td>
+      <td>0.805970</td>
+      <td>0.724638</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KNeighborsClassifier</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.000596</td>
+      <td>0.001533</td>
+      <td>0.880000</td>
+      <td>0.769231</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>KNeighborsClassifier</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.000762</td>
+      <td>0.002125</td>
+      <td>0.880899</td>
+      <td>0.780142</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>SVC</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.001294</td>
+      <td>0.000739</td>
+      <td>0.877698</td>
+      <td>0.774648</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>SVC</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.002796</td>
+      <td>0.001014</td>
+      <td>0.867925</td>
+      <td>0.781457</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>SVC</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.005861</td>
+      <td>0.001432</td>
+      <td>0.876068</td>
+      <td>0.783784</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>SGDClassifier</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.000692</td>
+      <td>0.000338</td>
+      <td>0.000000</td>
+      <td>0.064516</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>SGDClassifier</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.000688</td>
+      <td>0.000174</td>
+      <td>0.768061</td>
+      <td>0.655172</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>SGDClassifier</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.000837</td>
+      <td>0.000184</td>
+      <td>0.826176</td>
+      <td>0.791946</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>LogisticRegression</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.001125</td>
+      <td>0.000172</td>
+      <td>0.859259</td>
+      <td>0.764706</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>LogisticRegression</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.001667</td>
+      <td>0.000172</td>
+      <td>0.856187</td>
+      <td>0.791367</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>LogisticRegression</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.002391</td>
+      <td>0.000174</td>
+      <td>0.846847</td>
+      <td>0.805970</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>BaggingClassifier</td>
+      <td>False</td>
+      <td>100.0</td>
+      <td>0.022743</td>
+      <td>0.001219</td>
+      <td>0.984375</td>
+      <td>0.740157</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>BaggingClassifier</td>
+      <td>False</td>
+      <td>200.0</td>
+      <td>0.025399</td>
+      <td>0.001293</td>
+      <td>0.996390</td>
+      <td>0.744186</td>
+    </tr>
+    <tr>
       <th>29</th>
       <td>BaggingClassifier</td>
       <td>False</td>
       <td>300.0</td>
-      <td>0.033287</td>
-      <td>0.001391</td>
+      <td>0.028184</td>
+      <td>0.001271</td>
       <td>0.987715</td>
       <td>0.709677</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>GaussianNB</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.001555</td>
+      <td>0.000371</td>
+      <td>0.803783</td>
+      <td>0.763359</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>DecisionTreeClassifier</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.000931</td>
+      <td>0.000190</td>
+      <td>0.838574</td>
+      <td>0.786667</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>AdaBoostClassifier</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.005398</td>
+      <td>0.000439</td>
+      <td>0.829876</td>
+      <td>0.800000</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>RandomForestClassifier</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.023909</td>
+      <td>0.000949</td>
+      <td>0.890351</td>
+      <td>0.774648</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>GradientBoostingClassifier</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.032044</td>
+      <td>0.000297</td>
+      <td>0.851695</td>
+      <td>0.797203</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>KNeighborsClassifier</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.000741</td>
+      <td>0.002440</td>
+      <td>1.000000</td>
+      <td>0.791946</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>SVC</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.005650</td>
+      <td>0.001274</td>
+      <td>0.832298</td>
+      <td>0.794521</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>SGDClassifier</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.009485</td>
+      <td>0.000176</td>
+      <td>0.836910</td>
+      <td>0.774648</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>LogisticRegression</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.001412</td>
+      <td>0.000175</td>
+      <td>0.825911</td>
+      <td>0.781457</td>
     </tr>
     <tr>
       <th>39</th>
       <td>BaggingClassifier</td>
       <td>True</td>
       <td>300.0</td>
-      <td>0.044329</td>
-      <td>0.002117</td>
+      <td>0.047012</td>
+      <td>0.002393</td>
       <td>0.841004</td>
       <td>0.805556</td>
     </tr>
@@ -13976,9 +13929,84 @@ DecisionTree is a simple flow chart (bunch of if-this-go-lelft/if-that-go-right)
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-5---Final-F1-Score">Question 5 - Final F<sub>1</sub> Score<a class="anchor-link" href="#Question-5---Final-F1-Score">&#182;</a></h3><p><em>What is the final model's F<sub>1</sub> score for training and testing? How does that score compare to the untuned model?</em></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">classifier</span><span class="o">==</span><span class="s1">&#39;DecisionTreeClassifier&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">training_size</span><span class="o">==</span><span class="mi">300</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>classifier</th>
+      <th>tuned</th>
+      <th>training_size</th>
+      <th>training_time</th>
+      <th>test_time</th>
+      <th>train_f1</th>
+      <th>test_f1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>DecisionTreeClassifier</td>
+      <td>False</td>
+      <td>300.0</td>
+      <td>0.002670</td>
+      <td>0.000265</td>
+      <td>1.000000</td>
+      <td>0.661290</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>DecisionTreeClassifier</td>
+      <td>True</td>
+      <td>300.0</td>
+      <td>0.000931</td>
+      <td>0.000190</td>
+      <td>0.838574</td>
+      <td>0.786667</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn.tree</span> <span class="kn">as</span> <span class="nn">treelib</span>
@@ -14005,7 +14033,7 @@ DecisionTree is a simple flow chart (bunch of if-this-go-lelft/if-that-go-right)
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -15806,10 +15834,60 @@ Ak2FwP8BLuQqXP8xh6AAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-The F<sub>1</sub> score for training is 0.84 and testing is 0.80. The untuned model had more training accuracy which indicates overfitting. But, the tuned model beats untuned in testing.</p>
+The F<sub>1</sub> score for training is 0.84 and testing is 0.79. The untuned model had more training accuracy which indicates overfitting. But, the tuned model beats untuned in testing.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Following is comparison between different tuned classifiers:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">tuned</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;classifier&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">test_f1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>classifier
+AdaBoostClassifier            0.800000
+BaggingClassifier             0.805556
+DecisionTreeClassifier        0.786667
+GaussianNB                    0.763359
+GradientBoostingClassifier    0.797203
+KNeighborsClassifier          0.791946
+LogisticRegression            0.781457
+RandomForestClassifier        0.774648
+SGDClassifier                 0.774648
+SVC                           0.794521
+Name: test_f1, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
