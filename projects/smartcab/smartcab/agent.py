@@ -23,6 +23,7 @@ class LearningAgent(Agent):
 
 
         # Set any additional class parameters as needed
+        self.trial = 1
 
     def reset(self, destination=None, testing=False):
         """ The reset function is called at the beginning of each trial.
@@ -35,11 +36,13 @@ class LearningAgent(Agent):
         # Update epsilon using a decay function of your choice
         # Update additional class parameters as needed
         # If 'testing' is True, set epsilon and alpha to 0
+        self.trial += 1
+
         if testing is True:
             self.epsilon = 0.0
             self.alpha = 0.0
         else:
-            self.epsilon -= 0.05
+            self.epsilon = np.exp(-0.01*self.trial)
 
         return None
 
@@ -55,7 +58,7 @@ class LearningAgent(Agent):
 
         # Set 'state' as a tuple of relevant data for the agent
         #state = (waypoint, inputs['light'], inputs['oncoming'], inputs['left'], inputs['right'], deadline)
-        state = (waypoint, inputs['light'], inputs['oncoming'], inputs['left'], deadline)
+        state = (waypoint, inputs['light'], inputs['oncoming'], inputs['left'])
 
         return state
 
@@ -123,7 +126,7 @@ class LearningAgent(Agent):
         # Q(s,a) = Q(s,a)*(1-alpha) + (alpha*reward)
 
         if self.learning is True:
-            self.Q[state][action] = self.Q[state][action] * (1 - self.alpha) + (self.alpha * reward)
+            self.Q[state][action] = (self.Q[state][action] * (1 - self.alpha)) + (self.alpha * reward)
 
         return
 
@@ -138,6 +141,7 @@ class LearningAgent(Agent):
         reward = self.env.act(self, action)  # Receive a reward
         self.learn(state, action, reward)  # Q-learn
 
+
         return
 
 
@@ -151,7 +155,7 @@ def run():
     #   verbose     - set to True to display additional output from the simulation
     #   num_dummies - discrete number of dummy agents in the environment, default is 100
     #   grid_size   - discrete number of intersections (columns, rows), default is (8, 6)
-    env = Environment()
+    env = Environment(verbose=True)
 
     ##############
     # Create the driving agent
@@ -175,7 +179,7 @@ def run():
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    sim = Simulator(env, update_delay=0.01, log_metrics=True)
+    sim = Simulator(env, update_delay=0.01, log_metrics=True, optimized=True)
     # sim = Simulator(env)
 
     ##############
