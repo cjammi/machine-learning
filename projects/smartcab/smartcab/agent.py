@@ -42,7 +42,7 @@ class LearningAgent(Agent):
             self.epsilon = 0.0
             self.alpha = 0.0
         else:
-            self.epsilon = np.exp(-0.01*self.trial)
+            self.epsilon = np.exp(-0.001*self.trial)
 
         return None
 
@@ -57,8 +57,7 @@ class LearningAgent(Agent):
         deadline = self.env.get_deadline(self)  # Remaining deadline
 
         # Set 'state' as a tuple of relevant data for the agent
-        #state = (waypoint, inputs['light'], inputs['oncoming'], inputs['left'], inputs['right'], deadline)
-        state = (waypoint, inputs['light'], inputs['oncoming'], inputs['left'])
+        state = (waypoint, inputs['light'], inputs['oncoming'], inputs['left'], inputs['right'])
 
         return state
 
@@ -187,7 +186,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(n_test=10)
+    sim.run(tolerance=0.01, n_test=200)
     # sim.run()
 
 
